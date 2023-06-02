@@ -32,10 +32,13 @@ class __AddPlayerButtonDebug extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return !kDebugMode
-        ? const SizedBox.shrink()
-        : ElevatedButton(
+        ? ElevatedButton(
             onPressed: () => context.read<MatchupCubit>().add_Player_debug(),
             child: const Text('Add player'),
+          )
+        : ElevatedButton(
+            onPressed: () => context.read<MatchupCubit>().add_AI_Player_debug(),
+            child: const Text('Add AI player'),
           );
   }
 }
@@ -86,7 +89,7 @@ class _PlayerCard extends StatelessWidget {
                     onTap: () =>
                         context.read<MatchupCubit>().removePlayer(player),
                     // TODO !!! give the info about removal to the removed user's UI
-                  )
+                  ),
                 ],
               ),
       ),

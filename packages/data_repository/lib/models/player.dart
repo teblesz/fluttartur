@@ -9,6 +9,7 @@ class Player extends Equatable {
     required this.userId,
     required this.nick,
     required this.isLeader,
+    required this.isAI,
     this.character,
     this.specialCharacter,
   });
@@ -17,11 +18,13 @@ class Player extends Equatable {
   final String userId;
   final String nick;
   final bool isLeader;
+  final bool isAI;
   final String? character; // TODO Change to boolean
   final String? specialCharacter;
 
   /// Empty player which represents that user is currently not in any player.
-  static const empty = Player(userId: '', nick: '', isLeader: false);
+  static const empty =
+      Player(userId: '', nick: '', isLeader: false, isAI: false);
 
   /// Convenience getter to determine whether the current player is empty.
   bool get isEmpty => this == Player.empty;
@@ -40,6 +43,7 @@ class Player extends Equatable {
       userId: data?["user_id"],
       nick: data?['nick'],
       isLeader: data?['is_leader'],
+      isAI: data?['is_ai'],
       character: data?['character'],
       specialCharacter: data?['special_character'],
     );
@@ -50,6 +54,7 @@ class Player extends Equatable {
       "user_id": userId,
       "nick": nick,
       'is_leader': isLeader,
+      'is_ai': isAI,
       if (character != null) "character": character,
       if (specialCharacter != null) "special_character": specialCharacter,
     };

@@ -130,8 +130,10 @@ class DataRepository {
     required String userId,
     required String nick,
     bool isLeader = false,
+    bool isAI = false,
   }) async {
-    var player = Player(userId: userId, nick: nick, isLeader: isLeader);
+    var player =
+        Player(userId: userId, nick: nick, isLeader: isLeader, isAI: isAI);
 
     final playerRef = await _firestore
         .collection('rooms')

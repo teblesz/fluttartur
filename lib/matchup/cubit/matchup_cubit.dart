@@ -104,5 +104,14 @@ class MatchupCubit extends Cubit<MatchupState> {
     debug_player_count++;
   }
 
-  int debug_player_count = 0;
+  Future<void> add_AI_Player_debug() async {
+    await _dataRepository.addPlayer(
+      nick: "AI_$debug_player_count",
+      userId: "${debug_player_count * 100}",
+      isAI: true,
+    );
+    debug_player_count++;
+  }
+
+  int debug_player_count = 1;
 }
