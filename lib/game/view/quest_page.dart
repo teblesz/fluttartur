@@ -42,13 +42,13 @@ class _QuestPageState extends State<QuestPage> {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
-            title: Text(AppLocalizations.of(context).quest),
+            title: Text(AppLocalizations.of(context)!.quest),
           ),
           body: Column(
             children: [
               const SizedBox(height: 20),
               Text(
-                AppLocalizations.of(context).voteInSecret,
+                AppLocalizations.of(context)!.voteInSecret,
                 style: const TextStyle(fontSize: 40),
               ),
               Expanded(child: Container()),
@@ -126,8 +126,8 @@ class _VoteQuestButton extends StatelessWidget {
           padding: const EdgeInsets.all(10.0),
           child: Text(
             isPositive
-                ? AppLocalizations.of(context).success
-                : AppLocalizations.of(context).fail,
+                ? AppLocalizations.of(context)!.success
+                : AppLocalizations.of(context)!.fail,
             style: const TextStyle(fontSize: 25),
           ),
         ));

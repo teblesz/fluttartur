@@ -44,7 +44,7 @@ class _LogOutButton extends StatelessWidget {
       onPressed: () {
         context.read<AppBloc>().add(const AppLogoutRequested());
       },
-      child: Text(AppLocalizations.of(context).logOut),
+      child: Text(AppLocalizations.of(context)!.logOut),
     );
   }
 }

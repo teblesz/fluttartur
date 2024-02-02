@@ -24,7 +24,7 @@ class SignUpPage extends StatelessWidget {
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
-          appBar: AppBar(title: Text(AppLocalizations.of(context).singup)),
+          appBar: AppBar(title: Text(AppLocalizations.of(context)!.singup)),
           body: BlocProvider<SignUpCubit>(
             create: (_) =>
                 SignUpCubit(context.read<AuthenticationRepository>()),

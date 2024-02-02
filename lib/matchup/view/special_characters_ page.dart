@@ -26,7 +26,7 @@ class CharactersPage extends StatelessWidget {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
-            title: Text(AppLocalizations.of(context).defineSpecialCharacters),
+            title: Text(AppLocalizations.of(context)!.defineSpecialCharacters),
           ),
           body: const _CharactersView(),
         ),
@@ -113,7 +113,7 @@ class _CharactersViewState extends State<_CharactersView> {
                     ? addMerlinAndAssassin()
                     : removeMerlinAndAssassin(),
                 child: Text(
-                  AppLocalizations.of(context).addMerlinAndAssassin,
+                  AppLocalizations.of(context)!.addMerlinAndAssassin,
                   style: const TextStyle(fontSize: 20),
                 ),
               ),
@@ -125,7 +125,7 @@ class _CharactersViewState extends State<_CharactersView> {
                         ? addPercivalAndMorgana()
                         : removePercivalAndMorgana(),
                 child: Text(
-                  AppLocalizations.of(context).addPercivalAndMorgana,
+                  AppLocalizations.of(context)!.addPercivalAndMorgana,
                   style: const TextStyle(fontSize: 20),
                 ),
               ),
@@ -140,7 +140,7 @@ class _CharactersViewState extends State<_CharactersView> {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              AppLocalizations.of(context).confirm,
+              AppLocalizations.of(context)!.confirm,
               style: const TextStyle(fontSize: 30),
             ),
           ),
@@ -172,21 +172,21 @@ class _CharactersList extends StatelessWidget {
       children: [
         Text(
           listGood
-              ? AppLocalizations.of(context).goodColon
-              : AppLocalizations.of(context).evilColon,
+              ? AppLocalizations.of(context)!.goodColon
+              : AppLocalizations.of(context)!.evilColon,
           style: const TextStyle(fontSize: 30),
         ),
         const SizedBox(height: 10),
         !hasMerlinAndAssassin
             ? const SizedBox.shrink()
             : (listGood
-                ? _TextCard(text: AppLocalizations.of(context).merlin)
-                : _TextCard(text: AppLocalizations.of(context).assassin)),
+                ? _TextCard(text: AppLocalizations.of(context)!.merlin)
+                : _TextCard(text: AppLocalizations.of(context)!.assassin)),
         !hasPercivalAndMorgana
             ? const SizedBox.shrink()
             : (listGood
-                ? _TextCard(text: AppLocalizations.of(context).percival)
-                : _TextCard(text: AppLocalizations.of(context).morgana)),
+                ? _TextCard(text: AppLocalizations.of(context)!.percival)
+                : _TextCard(text: AppLocalizations.of(context)!.morgana)),
       ],
     );
   }

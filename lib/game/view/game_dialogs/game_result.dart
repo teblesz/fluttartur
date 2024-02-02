@@ -14,7 +14,7 @@ Future<void> pushGameResultsDialog(BuildContext gameContext) {
         final outcome = gameContext.read<GameCubit>().state.winningTeam;
         final assassinPresent = gameContext.read<GameCubit>().assassinPresent();
         return AlertDialog(
-          //title: Text(AppLocalizations.of(gameContext).gameResults),
+          //title: Text(AppLocalizations.of(gameContext)!.gameResults),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -31,15 +31,15 @@ Future<void> pushGameResultsDialog(BuildContext gameContext) {
                     padding: const EdgeInsets.all(10.0),
                     child: Text(
                       outcome
-                          ? AppLocalizations.of(gameContext).goodTeamWon
-                          : AppLocalizations.of(gameContext).evilTeamWon,
+                          ? AppLocalizations.of(gameContext)!.goodTeamWon
+                          : AppLocalizations.of(gameContext)!.evilTeamWon,
                       style: const TextStyle(fontSize: 30),
                     ),
                   ),
                 ),
               ),
               const SizedBox(height: 10),
-              Text(AppLocalizations.of(gameContext).evilCourtiers,
+              Text(AppLocalizations.of(gameContext)!.evilCourtiers,
                   style: const TextStyle(fontSize: 25)),
               FutureBuilder<List<Player>>(
                 future: gameContext.read<GameCubit>().listOfEvilPlayers(),
@@ -72,7 +72,7 @@ Future<void> pushGameResultsDialog(BuildContext gameContext) {
                 Navigator.of(dialogContext).pop();
                 gameContext.read<RoomCubit>().leaveRoom();
               },
-              child: Text(AppLocalizations.of(gameContext).exitGame,
+              child: Text(AppLocalizations.of(gameContext)!.exitGame,
                   style: const TextStyle(fontSize: 20)),
             ),
           ],
@@ -124,7 +124,7 @@ class _KillingMerlinBox extends StatelessWidget {
         child: !isAssassin
             ? Column(
                 children: [
-                  Text(AppLocalizations.of(context).assassinChooses,
+                  Text(AppLocalizations.of(context)!.assassinChooses,
                       style: const TextStyle(fontSize: 20)),
                   const Padding(
                     padding: EdgeInsets.all(15.0),
@@ -134,7 +134,7 @@ class _KillingMerlinBox extends StatelessWidget {
               )
             : Column(
                 children: [
-                  Text(AppLocalizations.of(context).killMerlin,
+                  Text(AppLocalizations.of(context)!.killMerlin,
                       style: const TextStyle(fontSize: 20)),
                   const SizedBox(height: 10),
                   FutureBuilder<List<Player>>(
@@ -204,8 +204,8 @@ class _MerlinKilledResult extends StatelessWidget {
           padding: const EdgeInsets.all(10.0),
           child: Text(
             !merlinKilled
-                ? AppLocalizations.of(context).merlinSafe
-                : AppLocalizations.of(context).merlinDead,
+                ? AppLocalizations.of(context)!.merlinSafe
+                : AppLocalizations.of(context)!.merlinDead,
             style: const TextStyle(fontSize: 30),
           ),
         ),

@@ -22,7 +22,7 @@ class LoginPage extends StatelessWidget {
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
-          appBar: AppBar(title: Text(AppLocalizations.of(context).login)),
+          appBar: AppBar(title: Text(AppLocalizations.of(context)!.login)),
           body: BlocProvider(
             create: (_) => LoginCubit(context.read<AuthenticationRepository>()),
             child: const LoginForm(),
