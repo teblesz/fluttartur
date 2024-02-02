@@ -55,7 +55,7 @@ class _RoomIdInput extends StatelessWidget {
       //keyboardType: TextInputType.number,
       decoration: InputDecoration(
         border: const UnderlineInputBorder(),
-        labelText: AppLocalizations.of(context).roomID,
+        labelText: AppLocalizations.of(context)!.roomID,
         helperText: '',
         //errorText: state.roomId.invalid ? 'invalid room ID' : null, //TODO alike in login
         // TODO !! add onError to joinRoom below with dialog about room gamestarted
@@ -91,7 +91,7 @@ class _JoinRoomButton extends StatelessWidget {
                       },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(AppLocalizations.of(context).join,
+                  child: Text(AppLocalizations.of(context)!.join,
                       style: const TextStyle(fontSize: 25)),
                 ),
               );
@@ -119,7 +119,7 @@ class _CreateRoomButton extends StatelessWidget {
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(AppLocalizations.of(context).createRoom,
+                  child: Text(AppLocalizations.of(context)!.createRoom,
                       style: const TextStyle(fontSize: 20)),
                 ),
               );

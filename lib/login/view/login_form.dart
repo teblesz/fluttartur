@@ -73,10 +73,10 @@ class _EmailInput extends StatelessWidget {
           onChanged: (email) => context.read<LoginCubit>().emailChanged(email),
           keyboardType: TextInputType.emailAddress,
           decoration: InputDecoration(
-            labelText: AppLocalizations.of(context).email,
+            labelText: AppLocalizations.of(context)!.email,
             helperText: '',
             errorText: state.email.invalid
-                ? AppLocalizations.of(context).invalidEmail
+                ? AppLocalizations.of(context)!.invalidEmail
                 : null,
           ),
         );
@@ -97,7 +97,7 @@ class _PasswordInput extends StatelessWidget {
               context.read<LoginCubit>().passwordChanged(password),
           obscureText: true,
           decoration: InputDecoration(
-            labelText: AppLocalizations.of(context).password,
+            labelText: AppLocalizations.of(context)!.password,
             helperText: '',
           ),
         );
@@ -121,7 +121,7 @@ class _LoginButton extends StatelessWidget {
                     : null,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(AppLocalizations.of(context).logIn,
+                  child: Text(AppLocalizations.of(context)!.logIn,
                       style: const TextStyle(fontSize: 25)),
                 ),
               );
@@ -135,7 +135,7 @@ class _GoogleLoginButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FilledButton.icon(
       key: const Key('loginForm_googleLogin_raisedButton'),
-      label: Text(AppLocalizations.of(context).logInWithGoogle,
+      label: Text(AppLocalizations.of(context)!.logInWithGoogle,
           style: const TextStyle(fontSize: 16)),
       icon: const Icon(FontAwesomeIcons.google, color: Colors.white),
       onPressed: () => context.read<LoginCubit>().logInWithGoogle(),
@@ -149,7 +149,7 @@ class _SignUpButton extends StatelessWidget {
     return FilledButton.tonal(
       key: const Key('loginForm_createAccount_flatButton'),
       onPressed: () => Navigator.of(context).push<void>(SignUpPage.route()),
-      child: Text(AppLocalizations.of(context).signUp),
+      child: Text(AppLocalizations.of(context)!.signUp),
     );
   }
 }

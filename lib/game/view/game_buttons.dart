@@ -40,7 +40,7 @@ class _SubmitSquadButton extends StatelessWidget {
               onPressed: !state.isSquadFull
                   ? null
                   : () => context.read<GameCubit>().submitSquad(),
-              child: Text(AppLocalizations.of(context).submitSquad,
+              child: Text(AppLocalizations.of(context)!.submitSquad,
                   style: const TextStyle(fontSize: 25)),
             ),
           );
@@ -69,7 +69,7 @@ class _VoteSquadPanelState extends State<_VoteSquadPanel> {
       child: Column(
         children: [
           const SizedBox(height: 10),
-          Text(AppLocalizations.of(context).voteForThisSquad,
+          Text(AppLocalizations.of(context)!.voteForThisSquad,
               style: const TextStyle(fontSize: 30)),
           const SizedBox(height: 10),
           Row(
@@ -123,8 +123,8 @@ class _VoteSquadButton extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Text(
               isPositive
-                  ? AppLocalizations.of(context).accept
-                  : AppLocalizations.of(context).reject,
+                  ? AppLocalizations.of(context)!.accept
+                  : AppLocalizations.of(context)!.reject,
               style: const TextStyle(fontSize: 25)),
         ));
   }
@@ -175,7 +175,7 @@ class _EmbarkmentCardState extends State<_EmbarkmentCard> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text(AppLocalizations.of(context).thisSquadWasApproved,
+                child: Text(AppLocalizations.of(context)!.thisSquadWasApproved,
                     style: const TextStyle(fontSize: 25)),
               ),
               FilledButton(
@@ -185,7 +185,7 @@ class _EmbarkmentCardState extends State<_EmbarkmentCard> {
                         // of context?
                         context,
                         QuestPage.route(() => _updateIsDisabled(true))),
-                child: Text(AppLocalizations.of(context).embark,
+                child: Text(AppLocalizations.of(context)!.embark,
                     style: const TextStyle(fontSize: 30)),
               ),
               const SizedBox(height: 10),

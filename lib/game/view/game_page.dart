@@ -31,11 +31,11 @@ class GamePage extends StatelessWidget {
               PopupMenuButton(
                 itemBuilder: (_) => [
                   PopupMenuItem(
-                    child: Text(AppLocalizations.of(context).forgotCharacter),
+                    child: Text(AppLocalizations.of(context)!.forgotCharacter),
                     onTap: () => pushCharacterInfoDialog(context),
                   ),
                   PopupMenuItem(
-                    child: Text(AppLocalizations.of(context).leaveRoom),
+                    child: Text(AppLocalizations.of(context)!.leaveRoom),
                     onTap: () => context.read<RoomCubit>().leaveRoom(),
                   ),
                 ],

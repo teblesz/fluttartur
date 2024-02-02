@@ -61,10 +61,10 @@ class _EmailInput extends StatelessWidget {
           onChanged: (email) => context.read<SignUpCubit>().emailChanged(email),
           keyboardType: TextInputType.emailAddress,
           decoration: InputDecoration(
-            labelText: AppLocalizations.of(context).email,
+            labelText: AppLocalizations.of(context)!.email,
             helperText: '',
             errorText: state.email.invalid
-                ? AppLocalizations.of(context).invalidEmail
+                ? AppLocalizations.of(context)!.invalidEmail
                 : null,
           ),
         );
@@ -84,10 +84,10 @@ class _PasswordInput extends StatelessWidget {
               context.read<SignUpCubit>().passwordChanged(password),
           obscureText: true,
           decoration: InputDecoration(
-            labelText: AppLocalizations.of(context).password,
+            labelText: AppLocalizations.of(context)!.password,
             helperText: '',
             errorText: state.password.invalid
-                ? AppLocalizations.of(context).invalidPassword
+                ? AppLocalizations.of(context)!.invalidPassword
                 : null,
           ),
         );
@@ -111,10 +111,10 @@ class _ConfirmPasswordInput extends StatelessWidget {
               .confirmedPasswordChanged(confirmPassword),
           obscureText: true,
           decoration: InputDecoration(
-            labelText: AppLocalizations.of(context).confirmPassword,
+            labelText: AppLocalizations.of(context)!.confirmPassword,
             helperText: '',
             errorText: state.confirmedPassword.invalid
-                ? AppLocalizations.of(context).passwordsDoNotMatch
+                ? AppLocalizations.of(context)!.passwordsDoNotMatch
                 : null,
           ),
         );
@@ -138,7 +138,7 @@ class _SignUpButton extends StatelessWidget {
                     : null,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(AppLocalizations.of(context).signUp,
+                  child: Text(AppLocalizations.of(context)!.signUp,
                       style: const TextStyle(fontSize: 20)),
                 ),
               );

@@ -10,7 +10,7 @@ Future<void> pushCharacterInfoDialog(BuildContext gameContext) {
       context: gameContext,
       builder: (BuildContext dialogContext) {
         return AlertDialog(
-          title: Text(AppLocalizations.of(gameContext).yourCharacterIs,
+          title: Text(AppLocalizations.of(gameContext)!.yourCharacterIs,
               style: const TextStyle(fontSize: 20)),
           content: _CharacterInfo(gameContext: gameContext),
           actions: [
@@ -18,7 +18,7 @@ Future<void> pushCharacterInfoDialog(BuildContext gameContext) {
               onPressed: () {
                 Navigator.of(dialogContext).pop();
               },
-              child: Text(AppLocalizations.of(gameContext).closeInfo,
+              child: Text(AppLocalizations.of(gameContext)!.closeInfo,
                   style: const TextStyle(fontSize: 20)),
             ),
           ],
@@ -58,8 +58,8 @@ class _CharacterInfoState extends State<_CharacterInfo> {
                       children: [
                         Text(
                           (player.character ?? "error") == 'good'
-                              ? AppLocalizations.of(context).good
-                              : AppLocalizations.of(context).evil,
+                              ? AppLocalizations.of(context)!.good
+                              : AppLocalizations.of(context)!.evil,
                           style: const TextStyle(fontSize: 30),
                         ),
                         player.specialCharacter == null
@@ -82,7 +82,7 @@ class _CharacterInfoState extends State<_CharacterInfo> {
                         : Column(
                             children: [
                               Text(
-                                  AppLocalizations.of(widget.gameContext)
+                                  AppLocalizations.of(widget.gameContext)!
                                       .evilCourtiers,
                                   style: const TextStyle(fontSize: 15)),
                               FutureBuilder<List<Player>>(
@@ -117,7 +117,7 @@ class _CharacterInfoState extends State<_CharacterInfo> {
                         : Column(
                             children: [
                               Text(
-                                  AppLocalizations.of(widget.gameContext)
+                                  AppLocalizations.of(widget.gameContext)!
                                       .merlinAndMorgana,
                                   style: const TextStyle(fontSize: 15)),
                               FutureBuilder<List<Player>>(
@@ -159,8 +159,8 @@ class _CharacterInfoState extends State<_CharacterInfo> {
             padding: const EdgeInsets.all(8.0),
             child: Text(
               _characterHidden
-                  ? AppLocalizations.of(context).show
-                  : AppLocalizations.of(context).hide,
+                  ? AppLocalizations.of(context)!.show
+                  : AppLocalizations.of(context)!.hide,
               style: const TextStyle(fontSize: 30),
             ),
           ),
@@ -174,13 +174,13 @@ class _CharacterInfoState extends State<_CharacterInfo> {
 String specialCharacterToText(String specialCharacter, BuildContext context) {
   switch (specialCharacter) {
     case 'good_merlin':
-      return AppLocalizations.of(context).merlin;
+      return AppLocalizations.of(context)!.merlin;
     case 'evil_assassin':
-      return AppLocalizations.of(context).assassin;
+      return AppLocalizations.of(context)!.assassin;
     case 'good_percival':
-      return AppLocalizations.of(context).percival;
+      return AppLocalizations.of(context)!.percival;
     case 'evil_morgana':
-      return AppLocalizations.of(context).morgana;
+      return AppLocalizations.of(context)!.morgana;
     default:
       return 'error';
   }

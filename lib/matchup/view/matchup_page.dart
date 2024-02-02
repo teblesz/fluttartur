@@ -29,7 +29,7 @@ class MatchupPage extends StatelessWidget {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
-            title: Text(AppLocalizations.of(context).matchup),
+            title: Text(AppLocalizations.of(context)!.matchup),
             actions: <Widget>[_MatchupAppBarActions()],
           ),
           body: BlocProvider(
@@ -48,14 +48,14 @@ class _MatchupAppBarActions extends StatelessWidget {
     return PopupMenuButton(
       itemBuilder: (_) => [
         PopupMenuItem(
-          child: Text(AppLocalizations.of(context).copyRoomsId),
+          child: Text(AppLocalizations.of(context)!.copyRoomsId),
           onTap: () async {
             final roomId = context.read<DataRepository>().currentRoom.id;
             await Clipboard.setData(ClipboardData(text: roomId));
           },
         ),
         PopupMenuItem(
-          child: Text(AppLocalizations.of(context).leaveRoom),
+          child: Text(AppLocalizations.of(context)!.leaveRoom),
           onTap: () => context.read<RoomCubit>().leaveRoom(),
         ),
       ],

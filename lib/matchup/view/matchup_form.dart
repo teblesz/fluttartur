@@ -82,7 +82,7 @@ class _PlayerCard extends StatelessWidget {
             : PopupMenuButton(
                 itemBuilder: (context) => [
                   PopupMenuItem(
-                    child: Text(AppLocalizations.of(context).remove),
+                    child: Text(AppLocalizations.of(context)!.remove),
                     onTap: () =>
                         context.read<MatchupCubit>().removePlayer(player),
                     // TODO !!! give the info about removal to the removed user's UI
@@ -124,7 +124,7 @@ class _StartGameButton extends StatelessWidget {
                 : () {
                     context.read<MatchupCubit>().initGame();
                   },
-            child: Text(AppLocalizations.of(context).startGame,
+            child: Text(AppLocalizations.of(context)!.startGame,
                 style: const TextStyle(fontSize: 20)),
           );
         });
@@ -136,7 +136,7 @@ class _RolesDefButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FilledButton.tonal(
       onPressed: () => Navigator.push(context, CharactersPage.route()),
-      child: Text(AppLocalizations.of(context).defineRoles),
+      child: Text(AppLocalizations.of(context)!.defineRoles),
     );
   }
 }
@@ -147,11 +147,11 @@ Future<void> _showNickDialog(BuildContext context) {
       context: context,
       builder: (BuildContext dialogContext) {
         return AlertDialog(
-          title: Text(AppLocalizations.of(context).enterYourNick),
+          title: Text(AppLocalizations.of(context)!.enterYourNick),
           content: TextField(
             onChanged: (nick) => context.read<MatchupCubit>().nickChanged(nick),
             decoration: InputDecoration(
-              labelText: AppLocalizations.of(context).nick,
+              labelText: AppLocalizations.of(context)!.nick,
             ),
           ),
           actions: [
@@ -166,7 +166,7 @@ Future<void> _showNickDialog(BuildContext context) {
                 Navigator.of(dialogContext).pop();
                 context.read<RoomCubit>().subscribeToGameStarted();
               },
-              child: Text(AppLocalizations.of(context).confirm),
+              child: Text(AppLocalizations.of(context)!.confirm),
             )
           ],
         );

@@ -10,7 +10,7 @@ Future<void> pushQuestResultsDialog(BuildContext context) {
       builder: (BuildContext dialogContext) {
         final outcome = context.read<GameCubit>().state.lastQuestOutcome;
         return AlertDialog(
-          title: Text(AppLocalizations.of(context).questResults,
+          title: Text(AppLocalizations.of(context)!.questResults,
               style: const TextStyle(fontSize: 20)),
           content: Card(
             color: outcome ? Colors.green.shade900 : Colors.red.shade900,
@@ -20,8 +20,8 @@ Future<void> pushQuestResultsDialog(BuildContext context) {
                 padding: const EdgeInsets.all(10.0),
                 child: Text(
                   outcome
-                      ? AppLocalizations.of(context).success
-                      : AppLocalizations.of(context).fail,
+                      ? AppLocalizations.of(context)!.success
+                      : AppLocalizations.of(context)!.fail,
                   style: const TextStyle(fontSize: 50),
                 ),
               ),
@@ -33,7 +33,7 @@ Future<void> pushQuestResultsDialog(BuildContext context) {
                 Navigator.of(dialogContext).pop();
                 context.read<GameCubit>().closeQuestResults();
               },
-              child: Text(AppLocalizations.of(context).closeResult,
+              child: Text(AppLocalizations.of(context)!.closeResult,
                   style: const TextStyle(fontSize: 20)),
             ),
           ],
