@@ -1,3 +1,4 @@
+[University project]
 # fluttartur standalone
 based on Flutter and Google Firebase Firestore 
 
