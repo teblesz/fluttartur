@@ -85,7 +85,7 @@ class _PasswordInput extends StatelessWidget {
           obscureText: true,
           decoration: InputDecoration(
             labelText: AppLocalizations.of(context)!.password,
-            helperText: '',
+            helperText: AppLocalizations.of(context)!.passwordcharacters,
             errorText: state.password.invalid
                 ? AppLocalizations.of(context)!.invalidPassword
                 : null,

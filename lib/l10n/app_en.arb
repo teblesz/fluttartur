@@ -11,6 +11,7 @@
   "invalidPassword": "invalid password",
   "confirmPassword": "confirm password",
   "passwordsDoNotMatch": "passwords do not match",
+  "passwordcharacters": "at least 8 characters - letters and digits",
 
   "lobby": "Find room",
   "logOut": "Log Out",
