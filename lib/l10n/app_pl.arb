@@ -11,6 +11,7 @@
   "invalidPassword": "niepoprawne hasło",
   "confirmPassword": "potwierdź hasło",
   "passwordsDoNotMatch": "hasła są różne",
+  "passwordcharacters": "co najmniej 8 znaków - litery i cyfry",
 
   "lobby": "Znajdź pokój",
   "join": "Dołącz",
